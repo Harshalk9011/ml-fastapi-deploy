@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-ml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-ml
+  template:
+    metadata:
+      labels:
+        app: fastapi-ml
+    spec:
+      containers:
+      - name: fastapi-ml
+        image: harshalk9011/fastapi-ml:latest
+        ports:
+        - containerPort: 8000
