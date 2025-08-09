@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: fastapi-ml-service
 spec:
-  type: NodePort
   selector:
     app: fastapi-ml
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8000
-      nodePort: 30007
+  type: NodePort  # Use ClusterIP if not exposing externally
